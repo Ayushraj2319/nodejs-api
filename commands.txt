@@ -1,0 +1,61 @@
+Test Case 3 — Node.js Application Setup & Git Integration
+
+Step 1: Create project folder
+mkdir nodejs-api
+cd nodejs-api
+
+Step 2: Initialize Node.js project
+npm init -y
+
+Step 3: Install dependencies
+npm install express
+npm install --save-dev @types/express
+
+Step 4: Create server file
+touch index.js
+
+Step 5: Add code
+nano index.js
+
+(Paste below code)
+
+const express = require('express');
+const app = express();
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
+
+app.listen(8080, () => {
+  console.log("Server running on port 8080");
+});
+
+(Save and exit)
+
+Step 6: Run server
+node index.js
+
+Step 7: Test API (in another terminal)
+curl http://localhost:8080/health
+
+Expected Output:
+{"status":"OK"}
+
+Step 8: Stop server
+CTRL + C
+
+Step 9: Initialize Git
+git init
+
+Step 10: Add files
+git add .
+
+Step 11: Commit
+git commit -m "Initial commit - Node.js API"
+
+Step 12: Add remote repository
+git remote add origin https://github.com/Ayushraj2319/nodejs-api.git
+
+Step 13: Push to GitHub
+git branch -M main
+git push -u origin main
